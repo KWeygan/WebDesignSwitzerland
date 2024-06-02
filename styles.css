@@ -1,0 +1,436 @@
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+p {
+    padding: 5px 0;
+    text-indent: 50px;
+}
+
+section {
+    padding: 50px;
+}
+
+header {
+    position: relative;
+    display: flex;
+    background-image: url(images/flag\ header.jpg);
+    background-size: 100% 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.logo {
+    width: 180px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.textintro div {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: xx-large;
+}
+
+
+
+.textintro div:first-of-type {
+    /* For increasing performance 
+    ID/Class should've been used. 
+    For a small demo 
+    it's okaish for now */
+    animation: showup 7s infinite;
+    margin-left: -100px;
+}
+
+.textintro div:last-of-type {
+    width: 0px;
+    animation: reveal 7s infinite;
+}
+
+.textintro div:last-of-type span {
+    margin-left: -100px;
+    animation: slidein 7s infinite;
+}
+
+
+@keyframes showup {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slidein {
+    0% {
+        margin-left: -800px;
+    }
+
+    20% {
+        margin-left: -800px;
+    }
+
+    35% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        width: 0px;
+    }
+
+    20% {
+        opacity: 1;
+        width: 0px;
+    }
+
+    30% {
+        width: 400px;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .textintro div {
+        font-size: xx-large;
+    }
+}
+
+@media only screen and (min-width:1050px) {
+    .textintro div {
+        font-size: 50px;
+    }
+
+    .textintro {
+        margin-left: -200px;
+    }
+
+    .textintro div:last-of-type {
+        width: 0px;
+        animation: reveal 7s infinite;
+    }
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+            width: 0px;
+        }
+
+        20% {
+            opacity: 1;
+            width: 0px;
+        }
+
+        30% {
+            width: 700px;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            width: 700px;
+        }
+    }
+}
+
+#about {
+    padding: 0;
+    position: relative;
+    background-image: url(images/About\ Switzerland.webp);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#about .bg {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    background-color: rgba(245, 245, 245, 0.5);
+}
+
+#about .about-content {
+    padding: 20px;
+    position: relative;
+    width: 50%;
+    left: 50%;
+    font-weight: 500;
+    font-size: 14pt;
+    text-align: center;
+}
+
+#about .about-content h2 {
+    text-align: center;
+}
+
+#destinations {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(images/Content\ BG\ dark.jpg);
+    background-size: cover;
+}
+
+#destinations h2 {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+#destinations .content,
+#destinations .content-image {
+    width: 50%;
+}
+
+#destinations .content {
+    padding: 25px;
+    font-weight: 500;
+    font-size: 14pt;
+    text-align: justify;
+}
+
+.destination h3 {
+    text-align: center;
+}
+
+.destination h3,
+.destination p {
+    color: white;
+}
+
+#destinations .content-image {
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+#destinations .content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border-radius: 40px;
+    transition: filter 1s ease, transform .5s ease;
+}
+
+#destinations .content-image:hover img {
+    filter: none;
+    transform: scale(1.2);
+}
+
+nav ul {
+    list-style-type: none;
+    padding-top: 10px;
+    margin-left: -85px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li:hover {
+    transform: scale(1.2);
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+nav ul li a:hover {
+    background-color: gold;
+}
+
+.destination {
+    margin-bottom: 50px;
+}
+
+.destination img {
+    width: 100%;
+    height: auto;
+}
+
+#activities {
+    background-color: black;
+    color: white;
+}
+
+#activities ul {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#activities .ui-widget-header {
+    background-color: black;
+    border: none;
+}
+
+.ui-widget.ui-widget-content {
+    border: black;
+}
+
+#activities li a {
+    background-color: white;
+    color: black;
+}
+
+#activities .ui-state-active a {
+    background-color: #007fff;
+    color: white;
+}
+
+#activities .ui-state-default a {
+    color: black;
+}
+
+#activities ul li:hover {
+    transform: scale(1.1);
+}
+
+#activities h2 {
+    text-align: center;
+}
+
+.activity-show {
+    text-align: center;
+    color: white;
+}
+
+.activity-show img {
+    width: 50%;
+    height: 100%;
+    animation-name: moveimg;
+    animation-duration: 4s;
+    animation-iteration-count: 1s;
+}
+
+@keyframes moveimg {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(20px, 0);
+    }
+
+    50% {
+        transform: translate(-15px, 0);
+    }
+
+    75% {
+        transform: translate(5px, 0);
+    }
+
+    100% {
+        transform: translate(-10px, 0);
+    }
+}
+
+.activity-show p {
+    text-align: center;
+    font-size: large;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#contact h2,
+#contact p {
+    text-align: center;
+}
+
+#contactForm input[type=text],
+#contactForm input[type=email] {
+    width: 90%;
+    height: 40px;
+    font-size: 14px;
+    margin: 10px auto;
+}
+
+#contactForm textarea {
+    width: 90%;
+    height: 100px;
+    margin: 10px auto;
+}
+
+input[type=submit] {
+    width: 25%;
+    margin: 10px auto;
+    border: 1px solid black;
+    background-color: rgb(68, 68, 68);
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
